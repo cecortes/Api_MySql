@@ -18,7 +18,7 @@ if(!$conexion)
 } else {
 
     //User
-    echo "MySql Connection success!"
+    echo "MySql Connection success!";
 
 }
 
@@ -34,7 +34,7 @@ if(!$db)
 } else {
 
     //User
-    echo "Database ok!"
+    echo "Database ok!";
 
 }
 
