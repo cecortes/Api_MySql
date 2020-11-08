@@ -12,7 +12,14 @@ $conexion = mysql_connect(DB_SERVER, DB_USER, DB_PASS);
 //Validación de conexión
 if(!$conexion)
 {
-	die('Error MYSQL: '.mysql_error());
+
+    die('Error MYSQL: '.mysql_error());
+    
+} else {
+
+    //User
+    echo "MySql Connection success!"
+
 }
 
 //Sentencia para la base de datos
@@ -21,7 +28,14 @@ $db = mysql_select_db(DB_NAME,$conexion);
 //Validación de la DB
 if(!$db)
 {
-	die('Error de base de datos: '.mysql_error());
+
+    die('Error de base de datos: '.mysql_error());
+    
+} else {
+
+    //User
+    echo "Database ok!"
+
 }
 
 ?>
