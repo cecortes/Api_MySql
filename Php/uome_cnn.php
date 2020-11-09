@@ -11,12 +11,5 @@ if(!$conexion)
 {
 	die('Error MYSQL: '.mysqli_error());
 }
-/*
-$db = mysqli_select_db(DB_NAME,$conexion);
 
-if(!$db)
-{
-	die('Error de base de datos: '.mysqli_error());
-}
-*/
 ?>
