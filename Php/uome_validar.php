@@ -15,7 +15,7 @@ $usr_pass="god1234";
 $sentencia=$conexion->prepare("SELECT * FROM usuarios WHERE usr_nom=? AND usr_pass=?");
 
 //Bind
-$sentencia->bind_param("ss",$usr_nom,$usr_pass);
+$sentencia->bind_param('ss',$usr_nom,$usr_pass);
 
 //Ejecutar
 $sentencia->execute();
