@@ -2,7 +2,7 @@
 
 //Datos para la conexión a mysql
 define('DB_SERVER','localhost');
-define('DB_NAME','sylka');
+define('DB_NAME','uome');
 define('DB_USER','root');
 define('DB_PASS','sylka1234');
 
