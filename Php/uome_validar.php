@@ -34,7 +34,7 @@ $response["success"] = false;
 while(mysqli_stmt_fetch($sentencia)){
     
     //Estructura del arreglo
-    $response["success"] = false;
+    $response["success"] = true;
     $response["usuario"] = $usr_nom;
     $response["clave"] = $usr_pass;
     $response["correo"] = $usr_mail;
