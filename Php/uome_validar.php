@@ -1,5 +1,5 @@
 <?php
-include 'uome_cnn.php';
+include_once 'uome_cnn.php';
 
 //Variables por POST
 $usr_nom=$_POST['usuario'];
@@ -12,27 +12,36 @@ $usr_pass="god1234";
 */
 
 //Sentencia controlada
-$sentencia=$conexion->prepare("SELECT * FROM usuarios;");
+$sentencia= mysqli_prepare($conexion, "SELECT * FROM usuarios WHERE usr_nom = ? AND usr_pass = ?");
 
 //Bind
-//$sentencia->bind_param('ss',$usr_nom,$usr_pass);
+mysqli_stmt_bind_param($sentencia, "ss", $usr_nom, $usr_pass);
 
 //Ejecutar
-$sentencia->execute();
+mysqli_stmt_execute($sentencia);
 
 //Variable para almacenar el resultado
-$resultado = $sentencia->get_result();
+mysqli_stmt_store_result($sentencia);
+mysqli_stmt_bind_result($sentencia, $usr_id, $usr_nom, $usr_mail, $usr_pass, $usr_create);
 
-//Validación
-if ($fila = $resultado->fetch_assoc()) {
+//Arreglo para recibir el resultado
+$response = array();
 
-    //Respuesta json
-    echo json_encode($fila, JSON_UNESCAPED_UNICODE);
+//Campo de validación
+$response["success"] = false;
 
+//Rutin para recibir el Resultado
+while(mysqli_stmt_fetch($sentencia)){
+    
+    //Estructura del arreglo
+    $response["success"] = false;
+    $response["usuario"] = $usr_nom;
+    $response["clave"] = $usr_pass;
+    $response["correo"] = $usr_mail;
+    $response["created"] = $usr_create;
 }
 
-//Close Sentencia controlada y Conexión
-$sentencia->close();
-$conexion->close();
+//Respuesta en formato json
+echo json_encode($response);
 
 ?>
