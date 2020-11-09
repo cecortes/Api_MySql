@@ -1,0 +1,1 @@
+INSERT INTO usuarios (usr_nom,usr_mail,usr_pass) VALUES ('god','god@hotmail.com','god1234'), ('cesar','cesar@gmail.com','ZMalqp10'), ('usuario','usuario@gmail.com','usuario1234');
