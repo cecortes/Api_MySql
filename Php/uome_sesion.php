@@ -3,8 +3,8 @@
 include_once 'uome_cnn.php';
 
 //Variables por POST
-$usr_nom=$_GET['u'];
-$usr_pass=$_GET['p'];
+$usr_nom=$_POST['u'];
+$usr_pass=$_POST['p'];
 
 //Debug
 /*
