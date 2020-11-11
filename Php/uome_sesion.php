@@ -29,13 +29,13 @@ mysqli_stmt_bind_result($sentencia, $usr_id, $usr_nom, $usr_mail, $usr_pass, $us
 $response = array();
 
 //Campo de validación
-$response["success"] = false;
+$response['sesion']["status"] = false;
 
 //Rutin para recibir el Resultado
 while(mysqli_stmt_fetch($sentencia)){
     
     //Estructura del arreglo
-    $response['sesion']["success"] = true;
+    $response['sesion']["status"] = true;
     $response['sesion']["usuario"] = $usr_nom;
     $response['sesion']["clave"] = $usr_pass;
     $response['sesion']["correo"] = $usr_mail;
