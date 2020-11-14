@@ -1,0 +1,10 @@
+CREATE TABLE `ubi`.`hits` (
+  `hits_id` INT NOT NULL,
+  `hits_fecha` DATE NULL,
+  `hits_hora` TIME NULL,
+  `hits_lat` DECIMAL(10,6) NULL,
+  `hits_lon` DECIMAL(10,6) NULL,
+  `hits_cat` VARCHAR(45) NULL,
+  PRIMARY KEY (`hits_id`));
+
+  CREATE TABLE IF NOT EXISTS hits (hits_id INT AUTO_INCREMENT PRIMARY KEY, hits_fecha DATE NULL, hits_hora TIME NULL, hits_lat DECIMAL(10,6) NULL, hits_lon DECIMAL(10,6) NULL, hits_cat VARCHAR(45) NULL, hits_create TIMESTAMP DEFAULT CURRENT_TIMESTAMP) ENGINE=INNODB;
