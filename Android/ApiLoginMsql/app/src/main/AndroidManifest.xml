@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApiLoginMsql"
         android:usesCleartextTraffic="true">
-        <activity android:name=".InsertCats"></activity>
+        <activity android:name=".InsertTags"></activity>
+        <activity android:name=".InsertCats" />
         <activity android:name=".InsertActivity" />
 
         <meta-data

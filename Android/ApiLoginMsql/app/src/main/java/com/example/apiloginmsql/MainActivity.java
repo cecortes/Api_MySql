@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
             //alerta.setMessage(usr.getUsr_nom()).setTitle("Sesión").create().show();
 
             //Intent para el activity de insert
-            Intent intent = new Intent(this, InsertCats.class);
+            Intent intent = new Intent(this, InsertTags.class);
 
             //Pasamos el parámetro de la sesion por medio de PUTEXTRA
             intent.putExtra(InsertActivity.nomSesion, usr.getUsr_nom());
